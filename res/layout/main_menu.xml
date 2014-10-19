@@ -1,0 +1,79 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainMenu" >
+
+    <TextView
+        android:id="@+id/introMainMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/HRM"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp"
+        android:text="@string/intro_main_menu" />
+
+    <TextView
+        android:id="@+id/titleMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/introMainMenu"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="38dp"
+        android:text="@string/title_menu"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/pedometer"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignTop="@+id/HRM"
+        android:layout_marginLeft="29dp"
+        android:layout_toRightOf="@+id/HRM"
+        android:text="@string/pedometer" />
+
+    <Button
+        android:id="@+id/HRM"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignLeft="@+id/introMainMenu"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="30dp"
+        android:text="@string/heart_rate_monitor" />
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/_empty" />
+
+    <Button
+        android:id="@+id/chartsButton"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/HRM"
+        android:layout_marginTop="17dp"
+        android:layout_toLeftOf="@+id/pedometer"
+        android:text="@string/charts" />
+
+    <Button
+        android:id="@+id/logsButton"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/chartsButton"
+        android:layout_alignBottom="@+id/chartsButton"
+        android:layout_alignLeft="@+id/pedometer"
+        android:text="@string/logs" />
+
+    <Button
+        android:id="@+id/logoutButton"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="27dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/username"
+        android:text="@string/logout" />
+
+</RelativeLayout>

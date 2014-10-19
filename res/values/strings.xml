@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">HealthicalIssues</string>
+    <string name="action_settings">Settings</string>
+    <string name="age">Age</string>
+    <string name="charts">Charts</string>
+    <string name="feet">ft</string>
+    <string name="inches">in</string>
+    <string name="heart_rate_monitor">Heart Rate Monitor</string>
+    <string name="height">Height</string>
+    <string name="intro_login">Welcome to this handy-dandy app to assist you with your health-related "issues"!</string>
+    <string name="intro_main_menu">Please select which function you\'d like to run.</string>
+    <string name="lbs">lbs</string>
+    <string name="login">LOGIN</string>
+    <string name="logout">LOGOUT</string>
+    <string name="logs">Logs</string>
+    <string name="pedometer">Pedometer</string>
+    <string name="register">REGISTER</string>
+    <string name="registration">Registration</string>
+    <string name="title_main">Healthical Issues</string>
+    <string name="title_menu">Main Menu</string>
+    <string name="title_activity_main_menu">MainMenu</string>
+    <string name="username">What is your name?</string>
+    <string name="weight">Weight</string>
+    <string name="welcome_username">Welcome, </string>
+    <string name="_empty"></string>
+    <string name="title_activity_first_time_register">FirstTimeRegister</string>
+
+</resources>
