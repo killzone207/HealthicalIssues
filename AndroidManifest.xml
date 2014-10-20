@@ -27,7 +27,10 @@
             android:name="FirstTimeRegister"
             android:label="@string/title_activity_first_time_register" >
         </activity>
-        
+        <activity android:name=".HeartRate" />
+
     </application>
 
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 </manifest>
