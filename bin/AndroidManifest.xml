@@ -23,11 +23,20 @@
             </intent-filter>
         </activity>
         <activity android:name="MainMenu" android:label="@string/title_activity_main_menu">
-        </activity><activity
+        </activity>
+        <activity
             android:name="FirstTimeRegister"
             android:label="@string/title_activity_first_time_register" >
         </activity>
+        <activity 
+        	android:name="HeartRate" 
+        	android:label="@string/heart_rate_monitor">
+        </activity>
+        <activity
+            android:name="NewConnectedListener">
+        </activity>
         
     </application>
-
+<uses-permission android:name="android.permission.BLUETOOTH" />
+ <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 </manifest>

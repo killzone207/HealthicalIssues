@@ -19,6 +19,7 @@ public class MainMenu extends Activity {
 	String height_inches;
 	
 	protected Button logout;
+	protected Button heartrate;
 	
 	TextView name;
 	
@@ -28,6 +29,8 @@ public class MainMenu extends Activity {
 		setContentView(R.layout.main_menu);
 		
 		logout = (Button) this.findViewById(R.id.logoutButton);
+		heartrate = (Button) this.findViewById(R.id.HRM);
+		
 		
 		Bundle b = getIntent().getExtras();
         username = b.getString("USERNAME");
@@ -45,11 +48,23 @@ public class MainMenu extends Activity {
 			}
 		});
         
+        heartrate.setOnClickListener(new OnClickListener(){
+        	public void onClick(View v){
+        		onButtonHeartRate(v);
+        	}
+        });
+        
 	}
 	
 	private void onButtonLogoutClick(View w){
 		Intent myIntent = new Intent(w.getContext(), LoginPage.class);
 
 	    startActivityForResult(myIntent, 0);
+	}
+	
+	private void onButtonHeartRate(View w){
+		Intent heartIntent = new Intent(w.getContext(), HeartRate.class);
+		
+		startActivity(heartIntent);
 	}
 }
