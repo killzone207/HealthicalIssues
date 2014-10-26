@@ -20,6 +20,7 @@ public class MainMenu extends Activity {
 	
 	protected Button logout;
 	protected Button heartrate;
+	protected Button pedometer;
 	
 	TextView name;
 	
@@ -30,6 +31,7 @@ public class MainMenu extends Activity {
 		
 		logout = (Button) this.findViewById(R.id.logoutButton);
 		heartrate = (Button) this.findViewById(R.id.HRM);
+		pedometer = (Button) this.findViewById(R.id.pedometer);
 		
 		
 		Bundle b = getIntent().getExtras();
@@ -54,6 +56,12 @@ public class MainMenu extends Activity {
         	}
         });
         
+        pedometer.setOnClickListener(new OnClickListener(){
+        	public void onClick(View v){
+        		onButtonPedometer(v);
+        	}
+        });
+        
 	}
 	
 	private void onButtonLogoutClick(View w){
@@ -66,5 +74,11 @@ public class MainMenu extends Activity {
 		Intent heartIntent = new Intent(w.getContext(), HeartRate.class);
 		
 		startActivity(heartIntent);
+	}
+	
+	private void onButtonPedometer(View w){
+		Intent pedoIntent = new Intent(w.getContext(), Pedometer.class);
+		
+		startActivity(pedoIntent);
 	}
 }

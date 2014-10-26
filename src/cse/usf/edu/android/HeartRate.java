@@ -17,7 +17,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.*;
-
+ 
 import zephyr.android.BioHarnessBT.*;
 
 public class HeartRate extends Activity {
@@ -28,9 +28,6 @@ public class HeartRate extends Activity {
 	NewConnectedListener _NConnListener;
 	private final int HEART_RATE = 0x100;
 	private final int RESPIRATION_RATE = 0x101;
-	private final int SKIN_TEMPERATURE = 0x102;
-	private final int POSTURE = 0x103;
-	private final int PEAK_ACCLERATION = 0x104;
 	
 	
 	
@@ -82,23 +79,14 @@ public class HeartRate extends Activity {
         			//BhMacID = btDevice.getAddress();
         			BluetoothDevice Device = adapter.getRemoteDevice(BhMacID);
         			String DeviceName = Device.getName();
-        			_bt = new BTClient(adapter, DeviceName);
+        			_bt = new BTClient(adapter, BhMacID);
         			_NConnListener = new NewConnectedListener(Newhandler,Newhandler);
         			_bt.addConnectedEventListener(_NConnListener);
         			
-        			TextView tv1 = (EditText)findViewById(R.id.labelHeartRate);
+        			TextView tv1 = (TextView)findViewById(R.id.labelHeartRate);
         			tv1.setText("000");
         			
-        			 tv1 = (EditText)findViewById(R.id.labelRespRate);
-        			 tv1.setText("0.0");
-        			 
-        			 tv1 = 	(EditText)findViewById(R.id.labelSkinTemp);
-        			 tv1.setText("0.0");
-        			 
-        			 tv1 = 	(EditText)findViewById(R.id.labelPosture);
-        			 tv1.setText("000");
-        			 
-        			 tv1 = 	(EditText)findViewById(R.id.labelPeakAcc);
+        			 tv1 = (TextView)findViewById(R.id.labelRespRate);
         			 tv1.setText("0.0");
         			if(_bt.IsConnected())
         			{
@@ -127,7 +115,7 @@ public class HeartRate extends Activity {
 				@Override
 				/*Functionality to act if the button DISCONNECT is touched*/
 				public void onClick(View v) {
-					// TODO Auto-generated method stub
+					
 					/*Reset the global variables*/
 					TextView tv = (TextView) findViewById(R.id.labelStatusMsg);
     				String ErrorText  = "Disconnected from BioHarness!";
@@ -192,38 +180,16 @@ public class HeartRate extends Activity {
     		{
     		case HEART_RATE:
     			String HeartRatetext = msg.getData().getString("HeartRate");
-    			tv = (EditText)findViewById(R.id.labelHeartRate);
+    			tv = (TextView)findViewById(R.id.labelHeartRate);
     			System.out.println("Heart Rate Info is "+ HeartRatetext);
     			if (tv != null)tv.setText(HeartRatetext);
     		break;
     		
     		case RESPIRATION_RATE:
     			String RespirationRatetext = msg.getData().getString("RespirationRate");
-    			tv = (EditText)findViewById(R.id.labelRespRate);
+    			tv = (TextView)findViewById(R.id.labelRespRate);
     			if (tv != null)tv.setText(RespirationRatetext);
     		
-    		break;
-    		
-    		case SKIN_TEMPERATURE:
-    			String SkinTemperaturetext = msg.getData().getString("SkinTemperature");
-    			tv = (EditText)findViewById(R.id.labelSkinTemp);
-    			if (tv != null)tv.setText(SkinTemperaturetext);
-
-    		break;
-    		
-    		case POSTURE:
-    			String PostureText = msg.getData().getString("Posture");
-    			tv = (EditText)findViewById(R.id.labelPosture);
-    			if (tv != null)tv.setText(PostureText);
-
-    		
-    		break;
-    		
-    		case PEAK_ACCLERATION:
-    			String PeakAccText = msg.getData().getString("PeakAcceleration");
-    			tv = (EditText)findViewById(R.id.labelPeakAcc);
-    			if (tv != null)tv.setText(PeakAccText);
-    			
     		break;	
     		
     		

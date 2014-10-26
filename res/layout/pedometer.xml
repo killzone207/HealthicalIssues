@@ -1,0 +1,56 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Pedometer" >
+
+    <TextView
+        android:id="@+id/pedometer_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="62dp"
+        android:text="Pedometer"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <CheckBox
+        android:id="@+id/Run_Background"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/steps"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="22dp"
+        android:text="Run in background" />
+
+    <TextView
+        android:id="@+id/steps_taken"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/pedometer_title"
+        android:layout_below="@+id/pedometer_title"
+        android:layout_marginRight="41dp"
+        android:layout_marginTop="122dp"
+        android:text="# of steps taken"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/steps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/steps_taken"
+        android:layout_alignBottom="@+id/steps_taken"
+        android:layout_toRightOf="@+id/Run_Background"
+        android:text="0"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/mainmenu_pedometer"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/Run_Background"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="85dp"
+        android:text="Back to Main Menu" />
+
+</RelativeLayout>

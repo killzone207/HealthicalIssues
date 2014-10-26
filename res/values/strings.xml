@@ -26,11 +26,12 @@
     <string name="welcome_username">Welcome, </string>
     <string name="_empty"></string>
     <string name="title_activity_first_time_register">FirstTimeRegister</string>
-    <string name="hello">Welcome to Zephyr BioHarness Appworld !</string>
+    <string name="hello">Heart Rate Monitor</string>
     <string name="labelHeartRate">000</string>
     <string name="labelRespRate">000</string>
     <string name="labelSkinTemp">000</string>
     <string name="labelPosture">000</string>
     <string name="labelPeakAcc">000</string>
     <string name="labelStatusMsg"></string>
+    <string name="BASE_URL">http://www.thetrueblood.com/api/</string>
 </resources>
